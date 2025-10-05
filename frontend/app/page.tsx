@@ -1,10 +1,9 @@
-
+import { Globe } from "@/components/ui/globe"
+import { h1 } from "motion/react-client"
 
 function Home() {
   return (
-   <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+   <h1>Hello World</h1>
   )
 }
 
