@@ -16,6 +16,22 @@ module.exports = {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
+  		animation: {
+  			shine: "shine var(--duration) infinite linear",
+  		},
+  		keyframes: {
+  			shine: {
+  				"0%": {
+  					"background-position": "0% 0%",
+  				},
+  				"50%": {
+  					"background-position": "100% 100%",
+  				},
+  				to: {
+  					"background-position": "0% 0%",
+  				},
+  			},
+  		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
