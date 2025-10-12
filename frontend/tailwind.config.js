@@ -18,6 +18,8 @@ module.exports = {
   		},
   		animation: {
   			shine: "shine var(--duration) infinite linear",
+  			appear: "appear 0.6s ease-out forwards",
+  			"appear-zoom": "appear-zoom 0.8s ease-out forwards",
   		},
   		keyframes: {
   			shine: {
@@ -29,6 +31,26 @@ module.exports = {
   				},
   				to: {
   					"background-position": "0% 0%",
+  				},
+  			},
+  			appear: {
+  				from: {
+  					opacity: "0",
+  					transform: "translateY(10px)",
+  				},
+  				to: {
+  					opacity: "1",
+  					transform: "translateY(0)",
+  				},
+  			},
+  			"appear-zoom": {
+  				from: {
+  					opacity: "0",
+  					transform: "scale(0.95)",
+  				},
+  				to: {
+  					opacity: "1",
+  					transform: "scale(1)",
   				},
   			},
   		},
@@ -72,7 +94,14 @@ module.exports = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
+  			},
+  			brand: {
+  				DEFAULT: 'hsl(var(--brand, 25 95% 53%))',
+  				foreground: 'hsl(var(--brand-foreground, 20 100% 60%))'
   			}
+  		},
+  		backgroundImage: {
+  			'radial': 'radial-gradient(ellipse at center, var(--tw-gradient-stops))',
   		}
   	}
   },
