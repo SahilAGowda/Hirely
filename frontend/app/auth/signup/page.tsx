@@ -30,13 +30,13 @@ function Signup() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-black relative">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-background relative">
       {/* Particles Background */}
       <Particles
         className="absolute inset-0"
         quantity={150}
         ease={80}
-        color="#ffffff"
+        color="currentColor"
         size={0.6}
         staticity={50}
         refresh={false}
@@ -45,7 +45,7 @@ function Signup() {
       {/* Centered Modal Card */}
       <div className="relative z-10 w-full max-w-4xl">
         <div className="relative w-full max-w-4xl">
-          <div className="relative bg-black/90 backdrop-blur-md rounded-2xl shadow-2xl shadow-purple-500/20 border border-gray-800 overflow-hidden">
+          <div className="relative bg-card/90 backdrop-blur-md rounded-2xl shadow-2xl shadow-purple-500/20 border border-border overflow-hidden">
             <BorderBeam 
               duration={4} 
               size={400} 
@@ -69,13 +69,13 @@ function Signup() {
               {/* Right side - Form */}
               <div className="w-full md:w-1/2 p-8 space-y-6">
                 <div className="text-center">
-                  <h2 className="text-2xl font-bold text-white mb-2">Join the community</h2>
-                  <p className="text-gray-400">Enter your personal data to create account</p>
+                  <h2 className="text-2xl font-bold text-foreground mb-2">Join the community</h2>
+                  <p className="text-muted-foreground">Enter your personal data to create account</p>
                 </div>
 
           {/* Social Login Buttons */}
           <div className="space-y-3">
-            <Button variant="outline" className="w-full bg-gray-900 border-gray-600 text-white hover:bg-gray-800 hover:border-white">
+            <Button variant="outline" className="w-full">
               <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24">
                 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                 <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -85,7 +85,7 @@ function Signup() {
               Google
             </Button>
             
-            <Button variant="outline" className="w-full bg-gray-900 border-gray-600 text-white hover:bg-gray-800 hover:border-white">
+            <Button variant="outline" className="w-full">
               <svg className="mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
               </svg>
@@ -95,10 +95,10 @@ function Signup() {
 
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
-              <span className="w-full border-t border-gray-600" />
+              <span className="w-full border-t border-border" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-gray-900 px-2 text-gray-400">Or</span>
+              <span className="bg-card px-2 text-muted-foreground">Or</span>
             </div>
           </div>
 
@@ -106,7 +106,7 @@ function Signup() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label htmlFor="firstName" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
                   First name
                 </label>
                 <Input
@@ -116,12 +116,11 @@ function Signup() {
                   placeholder="eg. Bella"
                   value={formData.firstName}
                   onChange={handleInputChange}
-                  className="bg-gray-900 border-gray-600 text-white placeholder-gray-500 focus:border-white"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="lastName" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-2">
                   Last name
                 </label>
                 <Input
@@ -131,14 +130,13 @@ function Signup() {
                   placeholder="eg. Smith"
                   value={formData.lastName}
                   onChange={handleInputChange}
-                  className="bg-gray-900 border-gray-600 text-white placeholder-gray-500 focus:border-white"
                   required
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                 Email
               </label>
               <Input
@@ -148,13 +146,12 @@ function Signup() {
                 placeholder="eg. username@gmail.com"
                 value={formData.email}
                 onChange={handleInputChange}
-                className="bg-gray-900 border-gray-600 text-white placeholder-gray-500 focus:border-white"
                 required
               />
             </div>
 
             <div>
-              <label htmlFor="experience" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="experience" className="block text-sm font-medium text-foreground mb-2">
                 Experience with Easy Apply
               </label>
               <select
@@ -162,7 +159,7 @@ function Signup() {
                 name="experience"
                 value={formData.experience}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 bg-gray-900 border border-gray-600 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:border-white"
+                className="w-full px-3 py-2 bg-background border border-input rounded-md text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-input"
                 required
               >
                 <option value="">Select that fits best</option>
@@ -173,14 +170,14 @@ function Signup() {
               </select>
             </div>
 
-            <Button type="submit" className="w-full bg-white text-black hover:bg-gray-100">
+            <Button type="submit" className="w-full">
               Start applying
             </Button>
           </form>
 
-                <p className="text-center text-sm text-gray-400">
+                <p className="text-center text-sm text-muted-foreground">
                   Already on board?{" "}
-                  <Link href="/auth/signin" className="text-blue-400 hover:underline">
+                  <Link href="/auth/signin" className="text-primary hover:underline">
                     Log in
                   </Link>
                 </p>
